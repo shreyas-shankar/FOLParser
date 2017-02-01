@@ -1,0 +1,2 @@
+(~man(joe))
+((~man(joe)) => woman(joe))

@@ -1,0 +1,16 @@
+((~Coyote(Coy))&(~Coyote(Bill)))(~Coyote(Coy))
+(~Coyote(Bill))
+
+((~Coyote(x))|(Roadrunner(y)&Chase(x,y)))(Roadrunner(y)|(~Coyote(x)))
+(Chase(x,y)|(~Coyote(x)))
+
+(((~Roadrunner(x))|(~Beep(x)))|Smart(x))(((~Roadrunner(x))|(~Beep(x)))|Smart(x))
+(((~Coyote(x))|(~Roadrunner(y)))|((~Smart(y))|(~Catch(x,y))))(((~Coyote(x))|(~Roadrunner(y)))|((~Smart(y))|(~Catch(x,y))))
+((((~Coyote(x))|(~Roadrunner(x)))|(~Chase(x,y)))|(Catch(x,y)|Frustrated(x)))((((~Coyote(x))|(~Roadrunner(x)))|(~Chase(x,y)))|(Catch(x,y)|Frustrated(x)))
+((~Roadrunner(x))|Beep(x))((~Roadrunner(x))|Beep(x))
+Beep(RR)Beep(RR)
+
+Roadrunner(RR)Roadrunner(RR)
+
+Roadrunner(RRB)Roadrunner(RRB)
+

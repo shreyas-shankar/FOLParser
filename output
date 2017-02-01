@@ -1,0 +1,217 @@
+['Ancestor(Liz,Billy)\n', 'Ancestor(Liz,Bob)\n']
+[~Ancestor['Liz', 'Billy'] ]
+
+0
+
+
+Refuting
+[~Ancestor['Liz', 'Billy'] ]
+Considering line [~Parent['x', 'y'] , Ancestor['x', 'y'] ]
+subs are  y Billy
+x Liz
+Unifying  [~Parent['Liz', 'Billy'] , Ancestor['Liz', 'Billy'] ] and [~Ancestor['Liz', 'Billy'] ]
+After Unification
+[~Parent['Liz', 'Billy'] ]
+1 2 1
+[~Ancestor['Liz', 'Billy'] ]
+
+
+1
+
+
+Refuting
+[~Parent['Liz', 'Billy'] ]
+Considering line [~Mother['x', 'y'] , Parent['x', 'y'] ]
+subs are  y Billy
+x Liz
+Unifying  [~Mother['Liz', 'Billy'] , Parent['Liz', 'Billy'] ] and [~Parent['Liz', 'Billy'] ]
+After Unification
+[~Mother['Liz', 'Billy'] ]
+1 2 1
+[~Ancestor['Liz', 'Billy'] ]
+[~Parent['Liz', 'Billy'] ]
+
+
+2
+
+
+Refuting
+[~Mother['Liz', 'Billy'] ]
+Considering line [Mother['Liz', 'Charley'] ]
+subs are  Unifying  [Mother['Liz', 'Charley'] ] and [~Mother['Liz', 'Billy'] ]
+After Unification
+[Mother['Liz', 'Charley'] , ~Mother['Liz', 'Billy'] ]
+2 1 1
+Considering line [~Father['x', 'y'] , Parent['x', 'y'] ]
+subs are  y Billy
+x Liz
+Unifying  [~Father['Liz', 'Billy'] , Parent['Liz', 'Billy'] ] and [~Parent['Liz', 'Billy'] ]
+After Unification
+[~Father['Liz', 'Billy'] ]
+1 2 1
+[~Ancestor['Liz', 'Billy'] ]
+[~Parent['Liz', 'Billy'] ]
+[~Mother['Liz', 'Billy'] ]
+
+
+2
+
+
+Refuting
+[~Father['Liz', 'Billy'] ]
+Considering line [Father['Charley', 'Billy'] ]
+subs are  Unifying  [Father['Charley', 'Billy'] ] and [~Father['Liz', 'Billy'] ]
+After Unification
+[Father['Charley', 'Billy'] , ~Father['Liz', 'Billy'] ]
+2 1 1
+Considering line [~Parent['x', 'y'] , Ancestor['x', 'z'] ]
+subs are  x Liz
+z Billy
+Unifying  [~Parent['Liz', 'y'] , Ancestor['Liz', 'Billy'] ] and [~Ancestor['Liz', 'Billy'] ]
+After Unification
+[~Parent['Liz', 'y'] ]
+1 2 1
+[~Ancestor['Liz', 'Billy'] ]
+[~Parent['Liz', 'Billy'] ]
+[~Mother['Liz', 'Billy'] ]
+[~Father['Liz', 'Billy'] ]
+
+
+1
+
+
+Refuting
+[~Parent['Liz', 'y'] ]
+Considering line [~Mother['x', 'y'] , Parent['x', 'y'] ]
+subs are  x Liz
+Unifying  [~Mother['Liz', 'y'] , Parent['Liz', 'y'] ] and [~Parent['Liz', 'y'] ]
+After Unification
+[~Mother['Liz', 'y'] ]
+1 2 1
+[~Ancestor['Liz', 'Billy'] ]
+[~Parent['Liz', 'Billy'] ]
+[~Mother['Liz', 'Billy'] ]
+[~Father['Liz', 'Billy'] ]
+[~Parent['Liz', 'y'] ]
+
+
+2
+
+
+Refuting
+[~Mother['Liz', 'y'] ]
+Considering line [Mother['Liz', 'Charley'] ]
+subs are  y Charley
+Unifying  [Mother['Liz', 'Charley'] ] and [~Mother['Liz', 'Charley'] ]
+After Unification
+[]
+0 1 1
+TRUE
+[~Ancestor['Liz', 'Bob'] ]
+
+0
+
+
+Refuting
+[~Ancestor['Liz', 'Bob'] ]
+Considering line [~Parent['x', 'y'] , Ancestor['x', 'y'] ]
+subs are  y Bob
+x Liz
+Unifying  [~Parent['Liz', 'Bob'] , Ancestor['Liz', 'Bob'] ] and [~Ancestor['Liz', 'Bob'] ]
+After Unification
+[~Parent['Liz', 'Bob'] ]
+1 2 1
+[~Ancestor['Liz', 'Bob'] ]
+
+
+1
+
+
+Refuting
+[~Parent['Liz', 'Bob'] ]
+Considering line [~Mother['x', 'y'] , Parent['x', 'y'] ]
+subs are  y Bob
+x Liz
+Unifying  [~Mother['Liz', 'Bob'] , Parent['Liz', 'Bob'] ] and [~Parent['Liz', 'Bob'] ]
+After Unification
+[~Mother['Liz', 'Bob'] ]
+1 2 1
+[~Ancestor['Liz', 'Bob'] ]
+[~Parent['Liz', 'Bob'] ]
+
+
+2
+
+
+Refuting
+[~Mother['Liz', 'Bob'] ]
+Considering line [Mother['Liz', 'Charley'] ]
+subs are  Unifying  [Mother['Liz', 'Charley'] ] and [~Mother['Liz', 'Bob'] ]
+After Unification
+[Mother['Liz', 'Charley'] , ~Mother['Liz', 'Bob'] ]
+2 1 1
+Considering line [~Father['x', 'y'] , Parent['x', 'y'] ]
+subs are  y Bob
+x Liz
+Unifying  [~Father['Liz', 'Bob'] , Parent['Liz', 'Bob'] ] and [~Parent['Liz', 'Bob'] ]
+After Unification
+[~Father['Liz', 'Bob'] ]
+1 2 1
+[~Ancestor['Liz', 'Bob'] ]
+[~Parent['Liz', 'Bob'] ]
+[~Mother['Liz', 'Bob'] ]
+
+
+2
+
+
+Refuting
+[~Father['Liz', 'Bob'] ]
+Considering line [Father['Charley', 'Billy'] ]
+subs are  Unifying  [Father['Charley', 'Billy'] ] and [~Father['Liz', 'Bob'] ]
+After Unification
+[Father['Charley', 'Billy'] , ~Father['Liz', 'Bob'] ]
+2 1 1
+Considering line [~Parent['x', 'y'] , Ancestor['x', 'z'] ]
+subs are  x Liz
+z Bob
+Unifying  [~Parent['Liz', 'y'] , Ancestor['Liz', 'Bob'] ] and [~Ancestor['Liz', 'Bob'] ]
+After Unification
+[~Parent['Liz', 'y'] ]
+1 2 1
+[~Ancestor['Liz', 'Bob'] ]
+[~Parent['Liz', 'Bob'] ]
+[~Mother['Liz', 'Bob'] ]
+[~Father['Liz', 'Bob'] ]
+
+
+1
+
+
+Refuting
+[~Parent['Liz', 'y'] ]
+Considering line [~Mother['x', 'y'] , Parent['x', 'y'] ]
+subs are  x Liz
+Unifying  [~Mother['Liz', 'y'] , Parent['Liz', 'y'] ] and [~Parent['Liz', 'y'] ]
+After Unification
+[~Mother['Liz', 'y'] ]
+1 2 1
+[~Ancestor['Liz', 'Bob'] ]
+[~Parent['Liz', 'Bob'] ]
+[~Mother['Liz', 'Bob'] ]
+[~Father['Liz', 'Bob'] ]
+[~Parent['Liz', 'y'] ]
+
+
+2
+
+
+Refuting
+[~Mother['Liz', 'y'] ]
+Considering line [Mother['Liz', 'Charley'] ]
+subs are  y Charley
+Unifying  [Mother['Liz', 'Charley'] ] and [~Mother['Liz', 'Charley'] ]
+After Unification
+[]
+0 1 1
+TRUE

@@ -1,0 +1,31 @@
+~A['x']  H['x']
+~D['x', 'y']  ~H['y']
+~B['x', 'y']  A['x']
+~C['x', 'y']  A['x']
+B['John', 'Alice']
+B['John', 'Bob']
+~D['x', 'y']  C['x', 'y']
+~Q['y']  C['x', 'y']
+D['John', 'Alice']
+Q['Bob']
+D['John', 'Bob']
+~F['x']  G['x']
+~G['x']  H['x']
+~H['x']  F['x']
+~R['x']  H['x']
+R['Tom']
+
+
+
+F(Bob)  -> FALSE
+H(John) --> TRUE
+~H(Alice) -> TRUE
+~H(John) -> FALSE
+G(Bob) -> FALSE
+G(Tom) -> TRUE
+
+H(John)
+~H(Alice)
+~H(John)
+G(Bob)
+G(Tom)

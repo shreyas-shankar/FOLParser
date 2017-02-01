@@ -1,0 +1,266 @@
+Created by PLY version 3.8 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    VARIABLE
+
+Grammar
+
+Rule 0     S' -> SENTENCE
+Rule 1     SENTENCE -> LPAREN SENTENCE AND SENTENCE RPAREN
+Rule 2     SENTENCE -> LPAREN SENTENCE OR SENTENCE RPAREN
+Rule 3     SENTENCE -> LPAREN SENTENCE INFERENCE SENTENCE RPAREN
+Rule 4     SENTENCE -> ATOMIC_SENTENCE
+Rule 5     ATOMIC_SENTENCE -> STRING LPAREN STRING RPAREN
+Rule 6     SENTENCE -> LPAREN NEG SENTENCE RPAREN
+
+Terminals, with rules where they appear
+
+AND                  : 1
+INFERENCE            : 3
+LPAREN               : 1 2 3 5 6
+NEG                  : 6
+OR                   : 2
+RPAREN               : 1 2 3 5 6
+STRING               : 5 5
+VARIABLE             : 
+error                : 
+
+Nonterminals, with rules where they appear
+
+ATOMIC_SENTENCE      : 4
+SENTENCE             : 1 1 2 2 3 3 6 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . SENTENCE
+    (1) SENTENCE -> . LPAREN SENTENCE AND SENTENCE RPAREN
+    (2) SENTENCE -> . LPAREN SENTENCE OR SENTENCE RPAREN
+    (3) SENTENCE -> . LPAREN SENTENCE INFERENCE SENTENCE RPAREN
+    (4) SENTENCE -> . ATOMIC_SENTENCE
+    (6) SENTENCE -> . LPAREN NEG SENTENCE RPAREN
+    (5) ATOMIC_SENTENCE -> . STRING LPAREN STRING RPAREN
+
+    LPAREN          shift and go to state 4
+    STRING          shift and go to state 1
+
+    ATOMIC_SENTENCE                shift and go to state 3
+    SENTENCE                       shift and go to state 2
+
+state 1
+
+    (5) ATOMIC_SENTENCE -> STRING . LPAREN STRING RPAREN
+
+    LPAREN          shift and go to state 5
+
+
+state 2
+
+    (0) S' -> SENTENCE .
+
+
+
+state 3
+
+    (4) SENTENCE -> ATOMIC_SENTENCE .
+
+    AND             reduce using rule 4 (SENTENCE -> ATOMIC_SENTENCE .)
+    OR              reduce using rule 4 (SENTENCE -> ATOMIC_SENTENCE .)
+    INFERENCE       reduce using rule 4 (SENTENCE -> ATOMIC_SENTENCE .)
+    RPAREN          reduce using rule 4 (SENTENCE -> ATOMIC_SENTENCE .)
+    $end            reduce using rule 4 (SENTENCE -> ATOMIC_SENTENCE .)
+
+
+state 4
+
+    (1) SENTENCE -> LPAREN . SENTENCE AND SENTENCE RPAREN
+    (2) SENTENCE -> LPAREN . SENTENCE OR SENTENCE RPAREN
+    (3) SENTENCE -> LPAREN . SENTENCE INFERENCE SENTENCE RPAREN
+    (6) SENTENCE -> LPAREN . NEG SENTENCE RPAREN
+    (1) SENTENCE -> . LPAREN SENTENCE AND SENTENCE RPAREN
+    (2) SENTENCE -> . LPAREN SENTENCE OR SENTENCE RPAREN
+    (3) SENTENCE -> . LPAREN SENTENCE INFERENCE SENTENCE RPAREN
+    (4) SENTENCE -> . ATOMIC_SENTENCE
+    (6) SENTENCE -> . LPAREN NEG SENTENCE RPAREN
+    (5) ATOMIC_SENTENCE -> . STRING LPAREN STRING RPAREN
+
+    NEG             shift and go to state 7
+    LPAREN          shift and go to state 4
+    STRING          shift and go to state 1
+
+    ATOMIC_SENTENCE                shift and go to state 3
+    SENTENCE                       shift and go to state 6
+
+state 5
+
+    (5) ATOMIC_SENTENCE -> STRING LPAREN . STRING RPAREN
+
+    STRING          shift and go to state 8
+
+
+state 6
+
+    (1) SENTENCE -> LPAREN SENTENCE . AND SENTENCE RPAREN
+    (2) SENTENCE -> LPAREN SENTENCE . OR SENTENCE RPAREN
+    (3) SENTENCE -> LPAREN SENTENCE . INFERENCE SENTENCE RPAREN
+
+    AND             shift and go to state 9
+    OR              shift and go to state 11
+    INFERENCE       shift and go to state 10
+
+
+state 7
+
+    (6) SENTENCE -> LPAREN NEG . SENTENCE RPAREN
+    (1) SENTENCE -> . LPAREN SENTENCE AND SENTENCE RPAREN
+    (2) SENTENCE -> . LPAREN SENTENCE OR SENTENCE RPAREN
+    (3) SENTENCE -> . LPAREN SENTENCE INFERENCE SENTENCE RPAREN
+    (4) SENTENCE -> . ATOMIC_SENTENCE
+    (6) SENTENCE -> . LPAREN NEG SENTENCE RPAREN
+    (5) ATOMIC_SENTENCE -> . STRING LPAREN STRING RPAREN
+
+    LPAREN          shift and go to state 4
+    STRING          shift and go to state 1
+
+    ATOMIC_SENTENCE                shift and go to state 3
+    SENTENCE                       shift and go to state 12
+
+state 8
+
+    (5) ATOMIC_SENTENCE -> STRING LPAREN STRING . RPAREN
+
+    RPAREN          shift and go to state 13
+
+
+state 9
+
+    (1) SENTENCE -> LPAREN SENTENCE AND . SENTENCE RPAREN
+    (1) SENTENCE -> . LPAREN SENTENCE AND SENTENCE RPAREN
+    (2) SENTENCE -> . LPAREN SENTENCE OR SENTENCE RPAREN
+    (3) SENTENCE -> . LPAREN SENTENCE INFERENCE SENTENCE RPAREN
+    (4) SENTENCE -> . ATOMIC_SENTENCE
+    (6) SENTENCE -> . LPAREN NEG SENTENCE RPAREN
+    (5) ATOMIC_SENTENCE -> . STRING LPAREN STRING RPAREN
+
+    LPAREN          shift and go to state 4
+    STRING          shift and go to state 1
+
+    ATOMIC_SENTENCE                shift and go to state 3
+    SENTENCE                       shift and go to state 14
+
+state 10
+
+    (3) SENTENCE -> LPAREN SENTENCE INFERENCE . SENTENCE RPAREN
+    (1) SENTENCE -> . LPAREN SENTENCE AND SENTENCE RPAREN
+    (2) SENTENCE -> . LPAREN SENTENCE OR SENTENCE RPAREN
+    (3) SENTENCE -> . LPAREN SENTENCE INFERENCE SENTENCE RPAREN
+    (4) SENTENCE -> . ATOMIC_SENTENCE
+    (6) SENTENCE -> . LPAREN NEG SENTENCE RPAREN
+    (5) ATOMIC_SENTENCE -> . STRING LPAREN STRING RPAREN
+
+    LPAREN          shift and go to state 4
+    STRING          shift and go to state 1
+
+    ATOMIC_SENTENCE                shift and go to state 3
+    SENTENCE                       shift and go to state 15
+
+state 11
+
+    (2) SENTENCE -> LPAREN SENTENCE OR . SENTENCE RPAREN
+    (1) SENTENCE -> . LPAREN SENTENCE AND SENTENCE RPAREN
+    (2) SENTENCE -> . LPAREN SENTENCE OR SENTENCE RPAREN
+    (3) SENTENCE -> . LPAREN SENTENCE INFERENCE SENTENCE RPAREN
+    (4) SENTENCE -> . ATOMIC_SENTENCE
+    (6) SENTENCE -> . LPAREN NEG SENTENCE RPAREN
+    (5) ATOMIC_SENTENCE -> . STRING LPAREN STRING RPAREN
+
+    LPAREN          shift and go to state 4
+    STRING          shift and go to state 1
+
+    ATOMIC_SENTENCE                shift and go to state 3
+    SENTENCE                       shift and go to state 16
+
+state 12
+
+    (6) SENTENCE -> LPAREN NEG SENTENCE . RPAREN
+
+    RPAREN          shift and go to state 17
+
+
+state 13
+
+    (5) ATOMIC_SENTENCE -> STRING LPAREN STRING RPAREN .
+
+    AND             reduce using rule 5 (ATOMIC_SENTENCE -> STRING LPAREN STRING RPAREN .)
+    OR              reduce using rule 5 (ATOMIC_SENTENCE -> STRING LPAREN STRING RPAREN .)
+    INFERENCE       reduce using rule 5 (ATOMIC_SENTENCE -> STRING LPAREN STRING RPAREN .)
+    RPAREN          reduce using rule 5 (ATOMIC_SENTENCE -> STRING LPAREN STRING RPAREN .)
+    $end            reduce using rule 5 (ATOMIC_SENTENCE -> STRING LPAREN STRING RPAREN .)
+
+
+state 14
+
+    (1) SENTENCE -> LPAREN SENTENCE AND SENTENCE . RPAREN
+
+    RPAREN          shift and go to state 18
+
+
+state 15
+
+    (3) SENTENCE -> LPAREN SENTENCE INFERENCE SENTENCE . RPAREN
+
+    RPAREN          shift and go to state 19
+
+
+state 16
+
+    (2) SENTENCE -> LPAREN SENTENCE OR SENTENCE . RPAREN
+
+    RPAREN          shift and go to state 20
+
+
+state 17
+
+    (6) SENTENCE -> LPAREN NEG SENTENCE RPAREN .
+
+    AND             reduce using rule 6 (SENTENCE -> LPAREN NEG SENTENCE RPAREN .)
+    OR              reduce using rule 6 (SENTENCE -> LPAREN NEG SENTENCE RPAREN .)
+    INFERENCE       reduce using rule 6 (SENTENCE -> LPAREN NEG SENTENCE RPAREN .)
+    RPAREN          reduce using rule 6 (SENTENCE -> LPAREN NEG SENTENCE RPAREN .)
+    $end            reduce using rule 6 (SENTENCE -> LPAREN NEG SENTENCE RPAREN .)
+
+
+state 18
+
+    (1) SENTENCE -> LPAREN SENTENCE AND SENTENCE RPAREN .
+
+    AND             reduce using rule 1 (SENTENCE -> LPAREN SENTENCE AND SENTENCE RPAREN .)
+    OR              reduce using rule 1 (SENTENCE -> LPAREN SENTENCE AND SENTENCE RPAREN .)
+    INFERENCE       reduce using rule 1 (SENTENCE -> LPAREN SENTENCE AND SENTENCE RPAREN .)
+    RPAREN          reduce using rule 1 (SENTENCE -> LPAREN SENTENCE AND SENTENCE RPAREN .)
+    $end            reduce using rule 1 (SENTENCE -> LPAREN SENTENCE AND SENTENCE RPAREN .)
+
+
+state 19
+
+    (3) SENTENCE -> LPAREN SENTENCE INFERENCE SENTENCE RPAREN .
+
+    AND             reduce using rule 3 (SENTENCE -> LPAREN SENTENCE INFERENCE SENTENCE RPAREN .)
+    OR              reduce using rule 3 (SENTENCE -> LPAREN SENTENCE INFERENCE SENTENCE RPAREN .)
+    INFERENCE       reduce using rule 3 (SENTENCE -> LPAREN SENTENCE INFERENCE SENTENCE RPAREN .)
+    RPAREN          reduce using rule 3 (SENTENCE -> LPAREN SENTENCE INFERENCE SENTENCE RPAREN .)
+    $end            reduce using rule 3 (SENTENCE -> LPAREN SENTENCE INFERENCE SENTENCE RPAREN .)
+
+
+state 20
+
+    (2) SENTENCE -> LPAREN SENTENCE OR SENTENCE RPAREN .
+
+    AND             reduce using rule 2 (SENTENCE -> LPAREN SENTENCE OR SENTENCE RPAREN .)
+    OR              reduce using rule 2 (SENTENCE -> LPAREN SENTENCE OR SENTENCE RPAREN .)
+    INFERENCE       reduce using rule 2 (SENTENCE -> LPAREN SENTENCE OR SENTENCE RPAREN .)
+    RPAREN          reduce using rule 2 (SENTENCE -> LPAREN SENTENCE OR SENTENCE RPAREN .)
+    $end            reduce using rule 2 (SENTENCE -> LPAREN SENTENCE OR SENTENCE RPAREN .)
+
